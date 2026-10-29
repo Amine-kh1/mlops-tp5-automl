@@ -41,7 +41,8 @@ def main():
         z.write(pdf, pdf.name)
         z.write(bundle, bundle.name)
         z.writestr("LIRE_AVANT_REMISE.txt",
-            f"Rapport : {pdf.name}\nDépôt public : {repo}\n"
+            f"Rapport : {pdf.name}\nDépôt public cible : {repo}\n"
+            "Le dépôt a été créé ; le code n'a pas encore été poussé (approbation spécifique requise).\n"
             "Le code et les preuves sont dans projet/ ; l'historique Git est dans le bundle.\n"
             "Le courriel .eml fourni séparément est un brouillon local avec le rapport joint.\n"
             "Aucun e-mail n'a été envoyé automatiquement.\n"
