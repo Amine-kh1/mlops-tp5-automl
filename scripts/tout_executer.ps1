@@ -14,20 +14,20 @@ function Invoke-TP5([string[]]$ArgumentsTP5) {
     if ($LASTEXITCODE -ne 0) { throw "Échec : $ArgumentsTP5" }
 }
 try {
-    Invoke-TP5 @('donnees.py')
-    Invoke-TP5 @('scripts/services.py','tracking')
-    Invoke-TP5 @('src/automl_deploy.py')
-    Invoke-TP5 @('src/modele_manuel.py')
-    Invoke-TP5 @('src/promouvoir.py','fraude-automl')
-    Invoke-TP5 @('src/promouvoir.py','fraude-manuel')
-    Invoke-TP5 @('scripts/services.py','automl')
-    Invoke-TP5 @('scripts/services.py','manuel')
-    Invoke-TP5 @('src/client.py','8100','--repetition','1')
-    Invoke-TP5 @('src/client.py','8101','--repetition','1')
-    Invoke-TP5 @('src/client.py','8100','--repetition','2')
-    Invoke-TP5 @('src/client.py','8101','--repetition','2')
-    Invoke-TP5 @('src/verifier_services.py')
-    Invoke-TP5 @('scripts/produire_resultats.py')
+    Invoke-TP5 -ArgumentsTP5 @('donnees.py')
+    Invoke-TP5 -ArgumentsTP5 @('scripts/services.py','tracking')
+    Invoke-TP5 -ArgumentsTP5 @('src/automl_deploy.py')
+    Invoke-TP5 -ArgumentsTP5 @('src/modele_manuel.py')
+    Invoke-TP5 -ArgumentsTP5 @('src/promouvoir.py','fraude-automl')
+    Invoke-TP5 -ArgumentsTP5 @('src/promouvoir.py','fraude-manuel')
+    Invoke-TP5 -ArgumentsTP5 @('scripts/services.py','automl')
+    Invoke-TP5 -ArgumentsTP5 @('scripts/services.py','manuel')
+    Invoke-TP5 -ArgumentsTP5 @('src/client.py','8100','--repetition','1')
+    Invoke-TP5 -ArgumentsTP5 @('src/client.py','8101','--repetition','1')
+    Invoke-TP5 -ArgumentsTP5 @('src/client.py','8100','--repetition','2')
+    Invoke-TP5 -ArgumentsTP5 @('src/client.py','8101','--repetition','2')
+    Invoke-TP5 -ArgumentsTP5 @('src/verifier_services.py')
+    Invoke-TP5 -ArgumentsTP5 @('scripts/produire_resultats.py')
 } finally {
     & $pythonTP5 scripts/services.py stop-all
 }

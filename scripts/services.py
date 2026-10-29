@@ -30,7 +30,9 @@ def start(key, port, arguments, health):
     else:
         raise RuntimeError(f"Port {port} déjà occupé : aucun processus tiers ne sera arrêté")
     env = {**os.environ, "MLFLOW_TRACKING_URI": "http://127.0.0.1:5000", "PYTHONIOENCODING": "utf-8",
-           "MLFLOW_ALLOW_PICKLE_DESERIALIZATION": "true"}
+           "MLFLOW_ALLOW_PICKLE_DESERIALIZATION": "true", "MLFLOW_DISABLE_AGENT_HINT": "1",
+           "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+           "VIRTUAL_ENV": str(Path(sys.executable).parent.parent)}
     log = REPORTS / f"{key}.log"
     with log.open("w", encoding="utf-8") as stream:
         process = subprocess.Popen([sys.executable, "-m", "mlflow", *arguments], cwd=ROOT, env=env,

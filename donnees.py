@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 
 # ============================================================
@@ -83,6 +84,7 @@ df = pd.DataFrame({
 # 6. Export du fichier CSV
 # ============================================================
 
+Path("data").mkdir(exist_ok=True)
 df.to_csv(
     "data/transactions.csv",
     index=False

@@ -1,8 +1,10 @@
 """Contrôles HTTP : signature, batch test identique au test local, statuts."""
 import json
+import joblib
+import numpy as np
 import requests
 from sklearn.metrics import f1_score
-from common import REPORTS, dataset, write_json
+from common import ROOT, REPORTS, dataset, write_json
 
 
 def main():
@@ -14,6 +16,8 @@ def main():
         batch = requests.post(f"http://127.0.0.1:{port}/invocations", json={"dataframe_records": Xte.to_dict(orient="records")}, timeout=30)
         batch.raise_for_status()
         preds = batch.json()["predictions"]
+        local = joblib.load(ROOT / f"models/model_{key}.pkl")
+        assert np.array_equal(preds, local.predict(Xte)), "Prédictions HTTP différentes des prédictions locales"
         actual = f1_score(yte, preds)
         expected = json.loads((REPORTS / f"{key}_resultats.json").read_text(encoding="utf-8"))["f1"]
         assert actual == expected, (key, actual, expected)
@@ -22,6 +26,7 @@ def main():
         assert all(col in bad.text for col in ["anciennete", "freq_24h", "nuit"])
         checks[key] = {"port": port, "health_status": health.status_code, "batch_status": batch.status_code,
                        "batch_size": len(preds), "http_f1": actual, "http_matches_local_f1": True,
+                       "http_predictions_identical": True,
                        "invalid_status": bad.status_code, "invalid_response": bad.json()}
         print(f"port {port} : santé HTTP 200 ; batch {len(preds)} lignes F1={actual:.4f} ; requête invalide HTTP {bad.status_code}")
         print(bad.text)
