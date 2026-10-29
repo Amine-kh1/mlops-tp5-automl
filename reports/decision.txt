@@ -1,0 +1,5 @@
+1. Je retiens le modèle AutoML XGBoost pour ce service, en tenant compte de la qualité et des contraintes de déploiement.
+2. Le F1 AutoML est 0.8614 contre 0.8669 ; il détecte 115/134 fraudes contre 114, avec 18 faux positifs contre 15.
+3. Les médianes AutoML sont 30.473/31.301 ms contre 79.084/77.470 ms ; les p95 confirment le classement sur ces essais.
+4. AutoML pèse 0.2014 Mio contre 13.3735 Mio (facteur 66.4) ; les deux modèles exposent une importance des variables.
+5. Je conserve l'autre version comme solution de repli et valide le coût des erreurs, les données futures et le retour arrière avant un déploiement réel.

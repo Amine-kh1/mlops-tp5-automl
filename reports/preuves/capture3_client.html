@@ -1,0 +1,24 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>Capture 3 - Client HTTP et requête invalide</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:28px;background:#edf2f7;color:#12243b;font:16px Segoe UI,Arial,sans-serif}header{margin-bottom:18px}h1{font-size:28px;margin:5px 0}header p{color:#526277;line-height:1.45;margin:8px 0}small{letter-spacing:2px;font-weight:700;color:#087f8c}.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}section{margin:8px 0 18px;border-radius:9px;overflow:hidden;background:#102034;box-shadow:0 3px 12px #182a3a15}h2{background:#1c334e;margin:0;padding:13px 16px;color:#b6dfdf;font-size:16px}pre{color:#edf5ff;font:15px/1.5 Consolas,monospace;white-space:pre-wrap;word-break:break-word;margin:0;padding:16px}footer{font-size:12px;color:#526277}</style>
+<header><small>TP05 · PREUVES D'EXÉCUTION</small><h1>Capture 3 - Client HTTP et requête invalide</h1><p>Résultats réels ; 10 échauffements puis 200 appels par essai. L&#x27;erreur ci-dessous est la réponse du serveur AutoML.</p></header><div class='panels'><section><h2>Quatre mesures enregistrées</h2><pre>python src/client.py 8100 --repetition 1
+réponse : 200 {&#x27;predictions&#x27;: [1]}
+médiane : 30.473 ms | p95 : 36.360 ms | 200/200 réponses valides
+
+python src/client.py 8101 --repetition 1
+réponse : 200 {&#x27;predictions&#x27;: [1]}
+médiane : 79.084 ms | p95 : 99.868 ms | 200/200 réponses valides
+
+python src/client.py 8100 --repetition 2
+réponse : 200 {&#x27;predictions&#x27;: [1]}
+médiane : 31.301 ms | p95 : 35.458 ms | 200/200 réponses valides
+
+python src/client.py 8101 --repetition 2
+réponse : 200 {&#x27;predictions&#x27;: [1]}
+médiane : 77.470 ms | p95 : 87.032 ms | 200/200 réponses valides
+</pre></section><section><h2>Transaction incomplète : montant seul</h2><pre>HTTP 400
+{
+  &quot;error_code&quot;: &quot;INVALID_PARAMETER_VALUE&quot;,
+  &quot;message&quot;: &quot;Failed to predict data &#x27;   montant\n0   8500.0&#x27;. \nError: Failed to enforce schema of data &#x27;   montant\n0   8500.0&#x27; with schema &#x27;[&#x27;montant&#x27;: double (required), &#x27;anciennete&#x27;: long (required), &#x27;freq_24h&#x27;: long (required), &#x27;nuit&#x27;: long (required)]&#x27;. Error: Model is missing inputs [&#x27;anciennete&#x27;, &#x27;freq_24h&#x27;, &#x27;nuit&#x27;].&quot;,
+  &quot;sqlstate&quot;: &quot;KAM01&quot;,
+  &quot;error_class&quot;: &quot;SCHEMA_ENFORCEMENT_FAILED&quot;
+}</pre></section></div><footer>Sources locales réelles, conservées dans reports/ ; présentation des journaux pour lecture et capture.</footer></html>

@@ -1,0 +1,17 @@
+{
+  "source": "https://cloud.google.com/vertex-ai/pricing",
+  "consultation_utc": "2026-10-29",
+  "type": "Estimation documentaire, aucun service cloud déployé",
+  "automl_tabulaire_inference": "Tarification de l'inférence des modèles personnalisés",
+  "region_hypothese": "us-central1 (Iowa)",
+  "machine_hypothese": "n1-standard-2",
+  "replicas": 1,
+  "currency": "USD",
+  "hourly_rate_on_demand": 0.1095,
+  "days": 30,
+  "hours": 720,
+  "estimated_compute_cost": 78.84,
+  "estimated_compute_cost_730h": 79.935,
+  "exclusions": ["stockage", "transferts", "taxes", "entraînement", "répliques supplémentaires"],
+  "note": "Une réplique maintenue prête reste facturée en absence de requêtes ; retirer le modèle pour arrêter ce coût."
+}

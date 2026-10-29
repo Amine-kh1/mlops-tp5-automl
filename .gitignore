@@ -13,4 +13,5 @@ reports/processes.json
 reports/server*.log
 reports/serve*.log
 reports/provenance_privee.json
+reports/entrainement_*.log
 livrables/

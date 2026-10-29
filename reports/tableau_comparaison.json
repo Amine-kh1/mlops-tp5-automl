@@ -1,0 +1,72 @@
+[
+  [
+    "Famille de modèle",
+    "RandomForestClassifier",
+    "XGBClassifier"
+  ],
+  [
+    "F1 sur le même test",
+    "0.8669",
+    "0.8614"
+  ],
+  [
+    "Précision",
+    "0.8837",
+    "0.8647"
+  ],
+  [
+    "Rappel fraude",
+    "0.8507",
+    "0.8582"
+  ],
+  [
+    "Recherche / entraînement machine",
+    "2.38 s (entraînement seul)",
+    "92.17 s (budget 90 s)"
+  ],
+  [
+    "Temps humain (estimation)",
+    "~2 h (estimation reprise du TP04)",
+    "~10 min (estimation de préparation, non chronométrée)"
+  ],
+  [
+    "Médiane, mesure 1 (ms)",
+    "79.084",
+    "30.473"
+  ],
+  [
+    "p95, mesure 1 (ms)",
+    "99.868",
+    "36.360"
+  ],
+  [
+    "Médiane, mesure 2 (ms)",
+    "77.470",
+    "31.301"
+  ],
+  [
+    "p95, mesure 2 (ms)",
+    "87.032",
+    "35.458"
+  ],
+  [
+    "Taille copie joblib (Mio)",
+    "13.3735",
+    "0.2014"
+  ],
+  [
+    "Explicabilité",
+    "500 arbres ; profondeur <=16 ; importance par permutation",
+    "231 arbres ; max_leaves=4 ; importance par permutation"
+  ],
+  [
+    "Format du paquet MLflow",
+    "skops",
+    "cloudpickle"
+  ],
+  [
+    "Version / alias",
+    "1 / production",
+    "1 / production"
+  ]
+]

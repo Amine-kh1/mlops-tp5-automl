@@ -1,0 +1,24 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>Capture 1b - Paquet AutoML enregistré</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:28px;background:#edf2f7;color:#12243b;font:16px Segoe UI,Arial,sans-serif}header{margin-bottom:18px}h1{font-size:28px;margin:5px 0}header p{color:#526277;line-height:1.45;margin:8px 0}small{letter-spacing:2px;font-weight:700;color:#087f8c}.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}section{margin:8px 0 18px;border-radius:9px;overflow:hidden;background:#102034;box-shadow:0 3px 12px #182a3a15}h2{background:#1c334e;margin:0;padding:13px 16px;color:#b6dfdf;font-size:16px}pre{color:#edf5ff;font:15px/1.5 Consolas,monospace;white-space:pre-wrap;word-break:break-word;margin:0;padding:16px}footer{font-size:12px;color:#526277}</style>
+<header><small>TP05 · PREUVES D'EXÉCUTION</small><h1>Capture 1b - Paquet AutoML enregistré</h1><p>Extrait exact des flavors du vrai fichier MLmodel ; dépendances exactes du paquet. Le fichier complet est conservé dans preuves/automl/.</p></header><div class='panels'><section><h2>MLmodel - flavors (extrait)</h2><pre>flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+</pre></section><section><h2>requirements.txt du modèle</h2><pre>mlflow==3.17.2
+scikit-learn==1.9.1
+numpy==2.5.4
+pandas==3.1.0
+cloudpickle==3.1.2
+skops==0.16.0
+xgboost==2.1.4</pre></section></div><footer>Sources locales réelles, conservées dans reports/ ; présentation des journaux pour lecture et capture.</footer></html>

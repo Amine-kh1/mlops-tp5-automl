@@ -1,0 +1,55 @@
+{
+  "name": "fraude-manuel",
+  "version": "1",
+  "run_id": "13e8450c5a6745d0afe0f7611dd8dd5a",
+  "model_uri": "models:/m-e9562e6ad15e46fd94d2a64ae02e50e4",
+  "class": "RandomForestClassifier",
+  "module": "sklearn",
+  "serialization": "skops",
+  "f1": 0.8669201520912547,
+  "precision": 0.8837209302325582,
+  "recall": 0.8507462686567164,
+  "duration_s": 2.3762980000001335,
+  "size_bytes": 14023161,
+  "confusion_matrix": [
+    [
+      1101,
+      15
+    ],
+    [
+      20,
+      114
+    ]
+  ],
+  "permutation_importance": {
+    "montant": 0.5806237848262706,
+    "anciennete": 0.24359888306112348,
+    "freq_24h": 0.2644558354872066,
+    "nuit": 0.20218693769372753
+  },
+  "permutation_std": {
+    "montant": 0.018264028431057913,
+    "anciennete": 0.007171534741407401,
+    "freq_24h": 0.03969136742271546,
+    "nuit": 0.017185309793870777
+  },
+  "params": {
+    "outil": "scikit-learn",
+    "n_estimators": 500,
+    "max_depth": 16,
+    "random_state": 42
+  },
+  "versions": {
+    "python": "3.13.5",
+    "flaml": "2.7.0",
+    "mlflow": "3.17.2",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "lightgbm": "4.7.0",
+    "xgboost": "2.1.4",
+    "skops": "0.16.0",
+    "cloudpickle": "3.1.2"
+  },
+  "packaged_predictions_identical": true
+}

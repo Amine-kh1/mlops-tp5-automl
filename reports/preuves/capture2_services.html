@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>Capture 2 - Deux services MLflow actifs</title>
+<style>*{box-sizing:border-box}body{margin:0;padding:28px;background:#edf2f7;color:#12243b;font:16px Segoe UI,Arial,sans-serif}header{margin-bottom:18px}h1{font-size:28px;margin:5px 0}header p{color:#526277;line-height:1.45;margin:8px 0}small{letter-spacing:2px;font-weight:700;color:#087f8c}.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}section{margin:8px 0 18px;border-radius:9px;overflow:hidden;background:#102034;box-shadow:0 3px 12px #182a3a15}h2{background:#1c334e;margin:0;padding:13px 16px;color:#b6dfdf;font-size:16px}pre{color:#edf5ff;font:15px/1.5 Consolas,monospace;white-space:pre-wrap;word-break:break-word;margin:0;padding:16px}footer{font-size:12px;color:#526277}</style>
+<header><small>TP05 · PREUVES D'EXÉCUTION</small><h1>Capture 2 - Deux services MLflow actifs</h1><p>Équivalent des terminaux 3 et 4 : vrais processus en arrière-plan, vrais journaux de démarrage et contrôles HTTP directs.</p></header><div class='panels'><section><h2>Service automl - port 8100</h2><pre>Commande : python -m mlflow models serve -m models:/fraude-automl@production --host 127.0.0.1 -p 8100 --env-manager local --workers 1
+PID parent enregistré : 2928
+GET /health -&gt; HTTP 200
+Contrôle UTC : 2026-10-29T17:08:02.714974+00:00
+
+2026/10/29 17:03:37 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor &#x27;python_function&#x27;
+2026/10/29 17:03:37 INFO mlflow.pyfunc.backend: === Running command &#x27;uvicorn --host 127.0.0.1 --port 8100 --workers 1 mlflow.pyfunc.scoring_server.app:app&#x27;
+INFO:     Started server process [19412]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8100 (Press CTRL+C to quit)</pre></section><section><h2>Service manuel - port 8101</h2><pre>Commande : python -m mlflow models serve -m models:/fraude-manuel@production --host 127.0.0.1 -p 8101 --env-manager local --workers 1
+PID parent enregistré : 9420
+GET /health -&gt; HTTP 200
+Contrôle UTC : 2026-10-29T17:08:02.714974+00:00
+
+2026/10/29 17:03:58 INFO mlflow.models.flavor_backend_registry: Selected backend for flavor &#x27;python_function&#x27;
+2026/10/29 17:03:58 INFO mlflow.pyfunc.backend: === Running command &#x27;uvicorn --host 127.0.0.1 --port 8101 --workers 1 mlflow.pyfunc.scoring_server.app:app&#x27;
+INFO:     Started server process [15752]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8101 (Press CTRL+C to quit)</pre></section></div><footer>Sources locales réelles, conservées dans reports/ ; présentation des journaux pour lecture et capture.</footer></html>

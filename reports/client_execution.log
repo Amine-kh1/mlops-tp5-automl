@@ -1,0 +1,8 @@
+port 8100 | réponse : 200 {'predictions': [1]}
+port 8100 | mesure 1 | médiane : 30.473 ms | p95 : 36.360 ms | n=200
+port 8101 | réponse : 200 {'predictions': [1]}
+port 8101 | mesure 1 | médiane : 79.084 ms | p95 : 99.868 ms | n=200
+port 8100 | réponse : 200 {'predictions': [1]}
+port 8100 | mesure 2 | médiane : 31.301 ms | p95 : 35.458 ms | n=200
+port 8101 | réponse : 200 {'predictions': [1]}
+port 8101 | mesure 2 | médiane : 77.470 ms | p95 : 87.032 ms | n=200

@@ -1,0 +1,15 @@
+{
+  "alias_fraude-automl.json": "c9f7653ad5d2140d09d9a8d67f89f9770f450b922aa79fe4e56077f39292a5fa",
+  "alias_fraude-manuel.json": "b5d105f42604a83db762f82180f8584abbdb823ce6c9720c5b4f496f31b9d8f3",
+  "automl_resultats.json": "7f4b3b8c033c5ae1ba91ee7e7ad60d08330ec0c06d3decc783eb752218604d61",
+  "dataset.json": "a828541ed115fdf2d3ce427ed879909cfee5656ae3b1b67e993e29f4bc2f22d7",
+  "environnement.json": "5fdf3f9cc6ad769d3dfafc018128e9e52126ddf4b07e6a5ad506be52f4596cec",
+  "github.json": "dd6d1efec10a9e2569c826a45ff4dc56b835f6d5599bf5b5fd5067cbb6782cd9",
+  "latence_8100_1.json": "5af8cb72f5ea0e6614aab81416986238c433fa67fd4d5f8ba64595f6747116e4",
+  "latence_8100_2.json": "193ea7c72d3c6b61c3bdc55c139d100b57802cd5e3db0200fd24087cdd14fdd5",
+  "latence_8101_1.json": "fb0e7af4b4fc0cb097dcccdfdf0934ef25bb23e023f56cc9602cc0996099f6e2",
+  "latence_8101_2.json": "338273cbff7ffabf48f205a4ed7a32f19a5d569b828356010e8709facd4c6b3b",
+  "manuel_resultats.json": "651c68f069bfa73a9f503492a4be9fec768f0e172124d6dcab9036f2e6bc9ca6",
+  "tableau_comparaison.json": "2207d63e21e3a26479ee466c8cb3de4c19af464449b5663e14177d1ffb922ed9",
+  "verification_http.json": "b7b055fc9da2a0587d36b38a4bc61ac60a1d6282dd3539bb69d00674e4352f34"
+}

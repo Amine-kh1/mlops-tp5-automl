@@ -1,0 +1,17 @@
+{
+  "sha256": "cf81ca30a17e6db0dc69bbe89d2b7f97710dd0dba3feaad1b35daacb16deb997",
+  "rows": 5000,
+  "frauds": 568,
+  "train_rows": 3750,
+  "test_rows": 1250,
+  "test_frauds": 134,
+  "features": [
+    "montant",
+    "anciennete",
+    "freq_24h",
+    "nuit"
+  ],
+  "test_size": 0.25,
+  "random_state": 42,
+  "stratify": null
+}

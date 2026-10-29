@@ -1,0 +1,34 @@
+{
+  "automl": {
+    "port": 8100,
+    "health_status": 200,
+    "batch_status": 200,
+    "batch_size": 1250,
+    "http_f1": 0.8614232209737828,
+    "http_matches_local_f1": true,
+    "http_predictions_identical": true,
+    "invalid_status": 400,
+    "invalid_response": {
+      "error_code": "INVALID_PARAMETER_VALUE",
+      "message": "Failed to predict data '   montant\n0   8500.0'. \nError: Failed to enforce schema of data '   montant\n0   8500.0' with schema '['montant': double (required), 'anciennete': long (required), 'freq_24h': long (required), 'nuit': long (required)]'. Error: Model is missing inputs ['anciennete', 'freq_24h', 'nuit'].",
+      "sqlstate": "KAM01",
+      "error_class": "SCHEMA_ENFORCEMENT_FAILED"
+    }
+  },
+  "manuel": {
+    "port": 8101,
+    "health_status": 200,
+    "batch_status": 200,
+    "batch_size": 1250,
+    "http_f1": 0.8669201520912547,
+    "http_matches_local_f1": true,
+    "http_predictions_identical": true,
+    "invalid_status": 400,
+    "invalid_response": {
+      "error_code": "INVALID_PARAMETER_VALUE",
+      "message": "Failed to predict data '   montant\n0   8500.0'. \nError: Failed to enforce schema of data '   montant\n0   8500.0' with schema '['montant': double (required), 'anciennete': long (required), 'freq_24h': long (required), 'nuit': long (required)]'. Error: Model is missing inputs ['anciennete', 'freq_24h', 'nuit'].",
+      "sqlstate": "KAM01",
+      "error_class": "SCHEMA_ENFORCEMENT_FAILED"
+    }
+  }
+}
