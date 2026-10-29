@@ -16,6 +16,8 @@ def main():
     if not pdf.is_file():
         raise FileNotFoundError("Produire et vérifier le rapport PDF avant de préparer la remise.")
     repo = json.loads((ROOT / "reports/github.json").read_text(encoding="utf-8"))["html_url"]
+    publication = json.loads((ROOT / "reports/statut_publication.json").read_text(encoding="utf-8"))
+    statut = "Code publié sur GitHub." if publication.get("code_pushed") else "Dépôt créé ; publication du code en attente."
     message = EmailMessage(policy=SMTP)
     message["To"] = "h.naciri@emsi.ma"
     message["From"] = "amine.khabot@gmail.com"
@@ -42,7 +44,7 @@ def main():
         z.write(bundle, bundle.name)
         z.writestr("LIRE_AVANT_REMISE.txt",
             f"Rapport : {pdf.name}\nDépôt public cible : {repo}\n"
-            "Le dépôt a été créé ; le code n'a pas encore été poussé (approbation spécifique requise).\n"
+            f"{statut}\n"
             "Le code et les preuves sont dans projet/ ; l'historique Git est dans le bundle.\n"
             "Le courriel .eml fourni séparément est un brouillon local avec le rapport joint.\n"
             "Aucun e-mail n'a été envoyé automatiquement.\n"

@@ -119,8 +119,9 @@ def main():
     sub("Données et comparaison équitable")
     paragraph(f"Le générateur original du TP04 produit {data['rows']} lignes, dont {data['frauds']} fraudes ({data['frauds']/data['rows']:.2%}). Les deux modèles partagent les {data['train_rows']} lignes d'apprentissage et les {data['test_rows']} lignes de test ({data['test_frauds']} fraudes), avec test_size=0,25 et random_state=42, sans stratification, comme dans le TP.")
     paragraph("Le test ne participe pas à la recherche FLAML. Les prédictions restent identiques après export, après rechargement du paquet MLflow, puis via HTTP sur l'intégralité du test. Le plan B scikit-learn n'a pas été utilisé. Le parcours cloud facultatif n'a pas été exécuté.")
-    p('Dépôt public cible : <link href="'+repo+'" color="#087f8c">'+repo+'</link>', "SmallTP5")
     publication = read("statut_publication.json") if (R / "statut_publication.json").exists() else {}
+    label = "Dépôt public" if publication.get("code_pushed") else "Dépôt public cible"
+    p(label+' : <link href="'+repo+'" color="#087f8c">'+repo+'</link>', "SmallTP5")
     if not publication.get("code_pushed", False):
         p("Statut de remise : dépôt créé ; publication du code en attente d'autorisation spécifique. Rapport et projet finalisés localement. Courriel préparé, non envoyé.", "SmallTP5")
     story.append(PageBreak())
